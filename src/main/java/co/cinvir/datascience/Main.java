@@ -5,7 +5,7 @@
  */
 package co.cinvir.datascience;
 
-import co.cinvir.datascience.logic.boundary.ModelProcessor;
+import co.cinvir.datascience.logic.boundary.VotationProcessor;
 import co.cinvir.datascience.logic.entity.OutputNode;
 import java.util.HashMap;
 import java.util.Map;
@@ -307,11 +307,11 @@ public class Main extends javax.swing.JFrame {
         values.put("conarmy", cbxConarmy.getSelectedItem().toString());
         values.put("relig", cbxRelig.getSelectedItem().toString());
         
-        Optional<ModelProcessor> processorOpt = ModelProcessor.newInstance(values);
+        Optional<VotationProcessor> processorOpt = VotationProcessor.newInstance();
         
-        ModelProcessor processor = processorOpt.get();
+        VotationProcessor processor = processorOpt.get();
         
-        Optional<OutputNode> result = processor.result();
+        Optional<OutputNode> result = processor.result(values);
         
         if(result.isPresent()){
             lblResult.setText(result.get().getDecision());
