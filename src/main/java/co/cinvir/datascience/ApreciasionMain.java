@@ -5,6 +5,9 @@
  */
 package co.cinvir.datascience;
 
+import co.cinvir.datascience.logic.boundary.ApreciacionesProcessor;
+import java.util.Optional;
+
 /**
  *
  * @author cvrodriguez
@@ -313,7 +316,7 @@ public class ApreciasionMain extends javax.swing.JFrame {
                             .addComponent(jLabelHijAdultCasa))))
                 .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNoCasada, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                    .addComponent(jLabelNoCasada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbxNoCasadaNoquiere, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -514,6 +517,11 @@ public class ApreciasionMain extends javax.swing.JFrame {
         });
 
         btnFelicid.setText("Calcular");
+        btnFelicid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFelicidActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -521,27 +529,31 @@ public class ApreciasionMain extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(211, 211, 211)
-                            .addComponent(btnFelicid)
-                            .addGap(36, 36, 36)
-                            .addComponent(jLabelResult, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(50, 50, 50))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(235, 235, 235)
-                            .addComponent(ApreciacionporelTrabajo1)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelRelacionesFueraMatr)
-                            .addComponent(jLabelSexoFueraMatr)
-                            .addComponent(jLabelRelaHomose)
-                            .addComponent(jLabelCasadoViduo)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabelFelGene, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelViudoAlgVez, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(211, 211, 211)
+                                .addComponent(btnFelicid)
+                                .addGap(36, 36, 36)
+                                .addComponent(jLabelResult, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(235, 235, 235)
+                                .addComponent(ApreciacionporelTrabajo1)))
+                        .addGap(50, 50, 50))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(56, 56, 56)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelRelacionesFueraMatr)
+                                    .addComponent(jLabelSexoFueraMatr)
+                                    .addComponent(jLabelRelaHomose)
+                                    .addComponent(jLabelCasadoViduo)
+                                    .addComponent(jLabelFelGene)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabelViudoAlgVez, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cbxFelic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbxSeFueMatri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -549,12 +561,12 @@ public class ApreciasionMain extends javax.swing.JFrame {
                             .addComponent(cbxRelacionFueraMatri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbxViudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbxCasaDivor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(62, Short.MAX_VALUE)
                 .addComponent(ApreciacionporelTrabajo1)
                 .addGap(59, 59, 59)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -707,6 +719,47 @@ public class ApreciasionMain extends javax.swing.JFrame {
     private void cbxdefBeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxdefBeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxdefBeActionPerformed
+
+    private void btnFelicidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFelicidActionPerformed
+        
+        String input = "";
+        
+        input += cbxdefBe.getSelectedItem().toString() + ",";
+        input += cbxNoMasHijo.getSelectedItem().toString() + ",";
+        input += cbxMuerMam.getSelectedItem().toString() + ",";
+        input += cbxBaIngre.getSelectedItem().toString() + ",";
+        input += cbxVioala.getSelectedItem().toString() + ",";
+        input += cbxNoCasadaNoquiere.getSelectedItem().toString() + ",";
+        input += cbxsiQuiereMujer.getSelectedItem().toString() + ",";
+        input += cbxSeFueMatri.getSelectedItem().toString() + ",";
+        input += cbxSexoHomos.getSelectedItem().toString() + ",";
+        input += cbxRelacionFueraMatri.getSelectedItem().toString() + ",";
+        input += cbxSuerOayuda.getSelectedItem().toString() + ",";
+        input += cbxContraba.getSelectedItem().toString() + ",";
+        input += cbxTiempoCompl.getSelectedItem().toString() + ",";
+        input += cbxColegi.getSelectedItem().toString() + ",";
+        input += cbxEstadoCivil.getSelectedItem().toString() + ",";
+        input += cbxCasaDivor.getSelectedItem().toString() + ",";
+        input += cbxViudo.getSelectedItem().toString() + ",";
+        input += cbxAlgiMas.getSelectedItem().toString() + ",";
+        input += cbxNumHijos.getSelectedItem().toString() + ",";
+        input += cbxSexo.getSelectedItem().toString() + ",";
+        input += cbxRel.getSelectedItem().toString() + ",";
+        input += cbxFelic.getSelectedItem().toString() + ",";
+        input += cbxHijAdultLikeHose.getSelectedItem().toString();
+        
+        System.out.println(input);
+        
+        ApreciacionesProcessor processor = new ApreciacionesProcessor();
+        Optional<Integer> cluster = processor.getCluster(input);
+        
+        if(cluster.isPresent()){
+            jLabelResult.setText("El cluster es: " + cluster.get());
+        } else {
+            jLabelResult.setText("No se pudo determinar a que cluster pertenece.");
+        }
+        
+    }//GEN-LAST:event_btnFelicidActionPerformed
 
     /**
      * @param args the command line arguments

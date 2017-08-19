@@ -219,7 +219,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabelNoCasada" alignment="3" pref="25" max="32767" attributes="0"/>
+                          <Component id="jLabelNoCasada" alignment="3" max="32767" attributes="0"/>
                           <Component id="cbxNoCasadaNoquiere" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -805,32 +805,39 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
-                                  <Component id="btnFelicid" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="jLabelResult" min="-2" pref="172" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="235" max="-2" attributes="0"/>
-                                  <Component id="ApreciacionporelTrabajo1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabelRelacionesFueraMatr" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelSexoFueraMatr" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelRelaHomose" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelCasadoViduo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jLabelFelGene" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabelViudoAlgVez" alignment="1" min="-2" pref="117" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                                      <Component id="btnFelicid" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="jLabelResult" min="-2" pref="172" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="235" max="-2" attributes="0"/>
+                                      <Component id="ApreciacionporelTrabajo1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabelRelacionesFueraMatr" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelSexoFueraMatr" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelRelaHomose" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelCasadoViduo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelFelGene" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabelViudoAlgVez" min="-2" pref="365" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="37" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="cbxFelic" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbxSeFueMatri" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -841,14 +848,14 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="122" max="32767" attributes="0"/>
+                      <EmptySpace pref="154" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="60" max="32767" attributes="0"/>
+                      <EmptySpace pref="62" max="32767" attributes="0"/>
                       <Component id="ApreciacionporelTrabajo1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1057,6 +1064,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Calcular"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFelicidActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelResult">
             </Component>
